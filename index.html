@@ -1,46 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Auto-Play Audio</title>
-</head>
-<body>
-<img src="LiuHappyBirthday.png"></img>
-
-<audio autoplay loop muted id="myAudio">
-  <source src="LiuHappyBirthday.mp3" type="audio/mpeg">
-  您的浏览器不支持 audio 元素。
-</audio>
-
-<script>
-// 由于浏览器的限制，即使添加了autoplay属性，自动播放仍可能不起作用。
-// 下面的JavaScript代码尝试在页面完全加载后播放音频。
-// 可以根据需要将其注释掉或取消注释。
-
-document.addEventListener('DOMContentLoaded', () => {
-  const audioElement = document.getElementById('myAudio');
-  audioElement.play()
-    .then(() => {
-      // Audio is playing
-    })
-    .catch(error => {
-      console.error("Audio playback failed:", error);
-      // 自动播放不起作用时，你可以在这里显示一些提醒或者降级处理
-    });
-});
-
-// 如果你希望在用户和页面交互后自动播放音频，你可以绑定一个事件，比如点击事件。
-// 例如，你可以为播放按钮添加一个事件监听器来播放音频。
-// 可以根据需要将以下代码注释掉或取消注释。
-
-document.addEventListener('click', function(event) {
-  const audioElement = document.getElementById('myAudio');
-  if(audioElement.paused) {
-    audioElement.play();
-  }
-});
-</script>
-
-</body>
+<html>
+  <body>
+    <img src="LiuHappyBirthday.png"></img>
+    <audio autoplay loop muted>
+    <source src="LiuHappyBirthday.mp3" type="audio/mpeg">
+    </audio>
+  </body>
 </html>
